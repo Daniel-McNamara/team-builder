@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TeamList from './components/TeamList';
 
+// Create function app
 function App() {
+  const [teamList, setTeamList] = useState([
+    {
+      id: 1,
+      name: 'Daniel',
+      email: 'daniel@nowhere.com',
+      role: 'Full Stack Web Developer'
+
+    }
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Team Members
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>My Super Sqaud List</h1>
+    <TeamList team={teamList} />
     </div>
   );
 }
