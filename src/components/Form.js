@@ -1,22 +1,20 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 
 const NoteForm = props => {
-    const [teamMember, setTeamMember] = useState ({
+    const [teamMember, setTeamMember] = useState({
         name: '',
         email: '',
         role: ''
     });
-
     const handleChanges = e => {
-        setTeamMember({...teamMember, [e.target.name]: e.target.value})
+        setTeamMember({ ...teamMember, [e.target.name]: e.target.value})
         console.log(teamMember);
     }
-
     const submitForm = e => {
         e.preventDefault();
+        props.addNewMember(teamMember);
         setTeamMember({ name: '', email: '', role: ''});
     }
-
     return (
         <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>
@@ -30,4 +28,4 @@ const NoteForm = props => {
     )
 }
 
-export default NoteForm;
+export default NoteForm; 

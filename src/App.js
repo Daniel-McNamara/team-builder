@@ -1,22 +1,17 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 import TeamList from './components/TeamList';
 import Form from './components/Form';
 
-
-// Create function app
 function App() {
   const [teamList, setTeamList] = useState([
     {
       id: 1,
       name: 'Daniel',
-      email: 'daniel@nowhere.com',
+      email: 'daniel@someplace.com',
       role: 'Full Stack Web Developer'
-
     }
   ]);
-
   const addNewTeamMember = member => {
     const newMember = {
       id: Date.now(),
@@ -28,9 +23,9 @@ function App() {
   }
   return (
     <div className="App">
-    <h1>My Super Sqaud List</h1>
-    <TeamList team={teamList} />
-    <Form addNewMember={addNewTeamMember} />
+      <h1>My Team</h1>
+      <Form addNewMember={addNewTeamMember} />
+      <TeamList team={teamList} />   
     </div>
   );
 }

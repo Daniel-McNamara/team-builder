@@ -1,5 +1,5 @@
 import React from 'react';
-//create export for teamlist
+
 export default function TeamList(props){
     return (
         <div className='team-list'>
